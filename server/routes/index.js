@@ -1,16 +1,12 @@
 const router = require("express").Router();
 
-const courseRoutes = require("./course");
-const categoryRoutes = require("./category");
-const userRoutes = require("./user");
+const meme = require('./meme');
 
 // create a default route for /api
-router.get("/api", (req, res) => {
+router.get("/", (req, res) => {
   res.json({ message: "Welcome to the API" });
 });
 
-router.use("/api/categories", categoryRoutes);
-router.use("/api/courses", courseRoutes);
-router.use("/api/users", userRoutes);
+router.use('/caption', meme);
 
 module.exports = router;
