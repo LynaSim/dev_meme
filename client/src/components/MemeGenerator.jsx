@@ -1,4 +1,4 @@
-//import './App.css'
+import '../style.css'
 
 import memes from '../assets/memes.json'
 
