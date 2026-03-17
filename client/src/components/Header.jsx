@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-
+import logo from '../assets/logo.png';
 import { useSession } from '../contexts/SessionContext';
 
 const Header = () => {
@@ -24,12 +24,12 @@ const Header = () => {
 
   return (
     <header>
-      <h1>LMS 3000</h1>
       <nav>
-        <Link to="/">All Courses</Link>
+        <Link to="/">All Memes</Link>
         {token ? (
           <>
-            <Link to="/profile">{wordCase(user.username)}'s Courses</Link>
+            <Link to="/profile">{wordCase(user.username)}'s Memes</Link>
+            <Link to="/memes">Meme Generator</Link>
             <button onClick={handleLogout}>Logout</button>
           </>
         ) : (
@@ -37,8 +37,10 @@ const Header = () => {
             <Link to="/login">Login</Link>
             <Link to="/signup">Signup</Link>
           </>
+
         )}
       </nav>
+      <img src={logo} alt="Logo" width='300'/>
     </header>
   );
 };
