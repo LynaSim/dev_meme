@@ -3,11 +3,7 @@ const bcrypt = require("bcrypt");
 
 const sequelize = require("../config/connection");
 
-// class User extends Model {
-//   checkPassword(loginPw) {
-//     return bcrypt.compareSync(loginPw, this.password);
-//   }
-// }
+class Meme extends Model {}
 
 Meme.init(
   {
@@ -20,10 +16,10 @@ Meme.init(
     url: {
       type: DataTypes.STRING,
       allowNull: false,
-      unique: true
+      unique: true,
     },
-    created_by: {
-      type: DataTypes.STRING,
+    user_id: {
+      type: DataTypes.INTEGER,
       allowNull: false,
       unique: true,
       references: {

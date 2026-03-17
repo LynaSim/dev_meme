@@ -3,14 +3,11 @@
 const User = require("./user");
 const Meme = require("/.meme");
 
-
-
 User.hasMany(Meme, {
   foreignKey: "user_id",
   onDelete: "CASCADE",
 });
   
-
 Meme.belongsTo(User, {
   foreignKey: "meme_id",
 });
