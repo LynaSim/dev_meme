@@ -1,32 +1,21 @@
 // import all models
-const Course = require("./course");
-const Category = require("./category");
+// const Category = require("./category");
 const User = require("./user");
-const EnrolledUser = require("./enrolled_user");
+const Meme = require("/.meme");
 
-Course.belongsTo(Category, {
-  foreignKey: "categoryId",
-  as: "category",
+
+
+User.hasMany(Meme, {
+  foreignKey: "user_id",
+  onDelete: "CASCADE",
 });
+  
 
-Category.hasMany(Course, {
-  foreignKey: "categoryId",
-  as: "courses",
-});
-
-User.belongsToMany(Course, {
-  through: EnrolledUser,
-  foreignKey: "userId",
-});
-
-Course.belongsToMany(User, {
-  through: EnrolledUser,
-  foreignKey: "courseId",
+Meme.belongsTo(User, {
+  foreignKey: "meme_id",
 });
 
 module.exports = {
-  Course,
-  Category,
   User,
-  EnrolledUser,
+  Meme,
 };
