@@ -1,5 +1,6 @@
 const router = require('express').Router();
 const axios = require('axios'); 
+const { Meme } = require('../models');
 
 router.post('/', async (req, res) => {
     const { template_id, text0, text1 } = req.body;
@@ -14,7 +15,15 @@ router.post('/', async (req, res) => {
 
     try {
         const response = await axios.post('https://api.imgflip.com/caption_image', params);
-       
+       if (response.data.success) {
+        
+        await Meme.create({
+            url: response.data.data.url,
+            text0: text0,
+            text1: text1,
+            userId: req.session.userId
+        });
+    }
         res.json(response.data);
     } catch (err) {
         console.error(err);

@@ -1,6 +1,7 @@
 import '../style.css';
-import memes from '../assets/memes.json';
 import { useState } from 'react';
+import axios from 'axios';
+import memes from '../assets/memes.json';
 
 function MemeGenerator() {
   const [meme, setMeme] = useState({
