@@ -7,7 +7,7 @@ User.hasMany(Meme, {
   foreignKey: "user_id",
   onDelete: "CASCADE",
 });
-  
+
 Meme.belongsTo(User, {
   foreignKey: "meme_id",
 });
