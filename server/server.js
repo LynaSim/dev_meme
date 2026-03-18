@@ -15,7 +15,7 @@ app.use(express.urlencoded({ extended: true }));
 // Enable CORS for any paths from the client
 app.use(cors());
 
-const PORT = process.env.PORT || 3001;
+const PORT = process.env.PORT || 5000;
 
 // has the --rebuild parameter been passed as a command line param?
 const rebuild = process.argv[2] === "--rebuild";
@@ -29,7 +29,7 @@ app.get("/", (req, res) => {
 });
 
 // Add routes
-app.use(routes);
+app.use('/api', routes);
 
 // Sync database
 sequelize.sync({ force: rebuild }).then(() => {
