@@ -1,7 +1,7 @@
 // import all models
 // const Category = require("./category");
 const User = require("./user");
-const Meme = require("/.meme");
+const Meme = require("./meme");
 
 User.hasMany(Meme, {
   foreignKey: "user_id",
