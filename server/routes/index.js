@@ -1,7 +1,5 @@
 const router = require("express").Router();
-
-const meme = require('./meme');
-const memePaths = require('./memeRoutes');
+const memeRoutes = require('./meme');
 const userRoutes = require("./user");
 
 // create a default route for /api
@@ -12,6 +10,6 @@ router.get("/", (req, res) => {
 router.use('/caption', meme);
 
 router.use("/api/users", userRoutes);
-router.use('/meme', memePaths);
+router.use('/api/memes', memeRoutes);
 
 module.exports = router;

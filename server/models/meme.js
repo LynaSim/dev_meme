@@ -43,4 +43,4 @@ Meme.init(
 );
 
 // Export User model
-module.exports = User;
+module.exports = Meme;
