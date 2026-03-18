@@ -1,13 +1,8 @@
 const { Model, Sequelize, DataTypes } = require("sequelize");
-const bcrypt = require("bcrypt");
 
 const sequelize = require("../config/connection");
 
-// class User extends Model {
-//   checkPassword(loginPw) {
-//     return bcrypt.compareSync(loginPw, this.password);
-//   }
-// }
+class Meme extends Model {}
 
 Meme.init(
   {
@@ -20,18 +15,17 @@ Meme.init(
     url: {
       type: DataTypes.STRING,
       allowNull: false,
-      unique: true
-    },
-    created_by: {
-      type: DataTypes.STRING,
-      allowNull: false,
       unique: true,
+    },
+    postedBy: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
       references: {
         model: 'user', // maps to User model
         key: 'id',
       },     
     },
-    created_on: {
+    createdOn: {
       type: DataTypes.DATE,
       allowNull: false,
       defaultValue: Sequelize.NOW,
@@ -47,4 +41,4 @@ Meme.init(
 );
 
 // Export User model
-module.exports = User;
+module.exports = Meme;

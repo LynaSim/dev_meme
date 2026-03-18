@@ -1,7 +1,7 @@
 // import all models
 // const Category = require("./category");
-const User = require("./user");
-const Meme = require("/.meme");
+const User = require("./user.js");
+const Meme = require("./meme.js");
 
 User.hasMany(Meme, {
   foreignKey: "user_id",
@@ -9,7 +9,7 @@ User.hasMany(Meme, {
 });
 
 Meme.belongsTo(User, {
-  foreignKey: "meme_id",
+  foreignKey: "user_id",
 });
 
 module.exports = {
