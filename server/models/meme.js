@@ -1,5 +1,4 @@
 const { Model, Sequelize, DataTypes } = require("sequelize");
-const bcrypt = require("bcrypt");
 
 const sequelize = require("../config/connection");
 
@@ -18,16 +17,15 @@ Meme.init(
       allowNull: false,
       unique: true,
     },
-    user_id: {
+    postedBy: {
       type: DataTypes.INTEGER,
       allowNull: false,
-      unique: true,
       references: {
         model: 'user', // maps to User model
         key: 'id',
       },     
     },
-    created_on: {
+    createdOn: {
       type: DataTypes.DATE,
       allowNull: false,
       defaultValue: Sequelize.NOW,
@@ -43,4 +41,4 @@ Meme.init(
 );
 
 // Export User model
-module.exports = User;
+module.exports = Meme;
