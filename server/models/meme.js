@@ -23,7 +23,15 @@ Meme.init(
       references: {
         model: 'user', // maps to User model
         key: 'id',
-      },     
+      },    
+    },
+    text0: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    text1: {
+      type: DataTypes.STRING,
+      allowNull: false,
     },
     createdOn: {
       type: DataTypes.DATE,
@@ -40,5 +48,5 @@ Meme.init(
   }
 );
 
-// Export User model
+// Export Meme model
 module.exports = Meme;

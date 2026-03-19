@@ -25,8 +25,12 @@ app.use(express.static(path.join(__dirname, "../client/public")));
 
 // Handle GET request at the root route
 app.get("/", (req, res) => {
-  res.sendFile(path.join(__dirname, "public", "index.htm"));
-});
+  res.sendFile(path.join(__dirname, "public", "index.html"));
+}); 
+// ?? Should it be: app.get("/", (req, res) => {
+// We go UP one level from 'server' to 'dev_meme', then into 'client/public'
+//   res.sendFile(path.join(__dirname, "../client/public", "index.html"));
+// }); 
 
 // Add routes
 app.use('/api', routes);
