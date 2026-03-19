@@ -34,7 +34,7 @@ function MemeGenerator() {
 
   const handleCreateMeme = async () => {
     try {
-      const response = await fetch("http://localhost:3001/api/caption_image", {
+      const response = await fetch("http://localhost:3001/api/memes", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({

@@ -7,8 +7,6 @@ router.get("/", (req, res) => {
   res.json({ message: "Welcome to the API" });
 });
 
-router.use('/caption_image', memeRoutes);
-
 router.use("/users", userRoutes);
 router.use('/memes', memeRoutes);
 
