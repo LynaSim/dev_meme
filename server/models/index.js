@@ -4,12 +4,12 @@ const User = require("./user.js");
 const Meme = require("./meme.js");
 
 User.hasMany(Meme, {
-  foreignKey: "user_id",
+  foreignKey: "userId",
   onDelete: "CASCADE",
 });
 
 Meme.belongsTo(User, {
-  foreignKey: "user_id",
+  foreignKey: "userId",
 });
 
 module.exports = {
