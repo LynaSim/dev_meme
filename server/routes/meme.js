@@ -2,7 +2,7 @@ const router = require('express').Router();
 const axios = require('axios'); 
 const { Meme } = require('../models');
 
-router.post('/', async (req, res) => {
+router.post('/caption_image', async (req, res) => {
     const { template_id, text0, text1 } = req.body;
 
    

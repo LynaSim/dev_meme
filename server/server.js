@@ -15,7 +15,7 @@ app.use(express.urlencoded({ extended: true }));
 // Enable CORS for any paths from the client
 app.use(cors());
 
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 3001;
 
 // has the --rebuild parameter been passed as a command line param?
 const rebuild = process.argv[2] === "--rebuild";

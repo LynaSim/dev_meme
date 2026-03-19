@@ -11,6 +11,7 @@ function MemeGenerator() {
     templateId: memes[0]?.id || ""
   });
 
+
   const [finalMeme, setFinalMeme] = useState(null);
 
   function handleChange(event) {
@@ -33,7 +34,7 @@ function MemeGenerator() {
 
   const handleCreateMeme = async () => {
     try {
-      const response = await fetch("http://localhost:5000/api/caption", {
+      const response = await fetch("http://localhost:3001/api/caption_image", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
