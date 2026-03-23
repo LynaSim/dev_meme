@@ -155,6 +155,40 @@ li {
     margin-top: 16px;
 }
 
+.dev-meme-layout{
+    display: flex;
+    gap: 30px;
+    align-items: flex-start;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.meme-gallery{
+    width: 320px;
+    min-width: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    max-height: 85vh;
+    overflow-y: auto;
+    padding: 20px 10px;
+    border: 1px solid #ddd;
+    background: #f9f9f9;
+}
+
+.thumb{
+    width: 90%;
+    /* aspect-ratio: 1/1; */
+    cursor: pointer;
+}
+
+.active-thumb{
+    width: 90%;
+    cursor: pointer;
+    border: 3px solid #007bff;
+}
+
 .course-list {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
