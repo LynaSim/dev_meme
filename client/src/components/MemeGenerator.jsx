@@ -99,7 +99,7 @@ function MemeGenerator() {
         <img id="meme-image" src={meme.selectedUrl} alt="Meme Preview" />
       </div>
 
-      <div className='form'>
+      <div className='meme-form'>
         <input
           type="text"
           placeholder='Top text'
