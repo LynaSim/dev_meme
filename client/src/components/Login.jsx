@@ -24,14 +24,16 @@ const Login = () => {
       const data = response.data;
 
     
-      // Update the user in the context
+      // Update the user in the context (temporary state)
       setUser({
         username: data.user.username,
         id: data.user.id,
       });
 
-
+      // Persistent state - localStorage
       localStorage.setItem('authToken', data.token);
+      localStorage.setItem('userId', data.user.id);
+      localStorage.setItem('username', data.user.username);
       navigate('/');
     } catch (error) {
       console.error('Login failed', error);
