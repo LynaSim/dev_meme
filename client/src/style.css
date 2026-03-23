@@ -164,13 +164,13 @@ li {
 }
 
 .meme-gallery{
-    width: 320px;
-    min-width: 300px;
+    width: 220px;
+    min-width: 200px;
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 20px;
-    max-height: 85vh;
+    max-height: 50vh;
     overflow-y: auto;
     padding: 20px 10px;
     border: 1px solid #ddd;
