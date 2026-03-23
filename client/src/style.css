@@ -158,7 +158,7 @@ li {
 .dev-meme-layout{
     display: flex;
     gap: 30px;
-    align-items: flex-start;
+    justify-content: center;
     max-width: 1200px;
     margin: 0 auto;
 }
@@ -174,7 +174,14 @@ li {
     overflow-y: auto;
     padding: 20px 10px;
     border: 1px solid #ddd;
-    background: #f9f9f9;
+}
+
+.meme-form {
+    display: flex;
+    flex-direction: column;
+    width: 350px;
+    justify-content: center;
+    font-size: large;
 }
 
 .thumb{
@@ -229,11 +236,4 @@ button:hover {
 }
 #center {
     text-align: center;
-}
-.meme-form {
-    display: flex;
-    flex-direction: column;
-    width: 350px;
-    justify-content: center;
-    font-size: large;
 }

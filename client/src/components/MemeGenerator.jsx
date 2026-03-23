@@ -96,7 +96,13 @@ function MemeGenerator() {
             key = {m.id} 
             src={m.url} 
             className={selectedMeme.id === m.id ? 'active-thumb' : 'thumb'}
-            onClick={() => setSelectedMeme(m)}
+            onClick={() => { setSelectedMeme(m);
+              setMeme(prev => ({ 
+            ...prev, 
+            templateId: m.id,
+            selectedUrl: m.url
+            }));
+            }}
             alt={m.name} />
         ))}
       </div>
@@ -110,7 +116,7 @@ function MemeGenerator() {
       </select> */}
       <div className = "meme-main-content">
       <div id="meme-preview">
-        <img id="meme-image" src={selectedMeme.url} alt="Current Meme" />
+        <img id="meme-image" src={meme.selectedUrl || selectedMeme.url} alt="Current Meme" />
       </div>
 
       <div className='meme-form'>
