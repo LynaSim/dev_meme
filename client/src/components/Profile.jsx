@@ -4,6 +4,7 @@ import '../style.css';
 
 function Profile() {
   const [userMemes, setUserMemes] = useState([]);
+  const username = localStorage.getItem('username');
 
   useEffect(() => {
     const fetchMyMemes = async () => {
@@ -20,7 +21,7 @@ function Profile() {
 
   return (
     <section>
-      <h1>Username's Saved Memes</h1>
+      <h1>{username}'s Saved Memes</h1>
       <hr />
 
       <div>
