@@ -1,5 +1,7 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState} from 'react';
+import { Link } from 'react-router-dom';
 import api from '../api';
+
 
 function AllMemes() {
   const [memes, setMemes] = useState([]);
@@ -12,6 +14,10 @@ function AllMemes() {
 
   return (
     <div>
+      <div class="welcome">
+      <p>Why wait for the perfect meme to find you? Turn those inside jokes into internet gold in seconds. Powered by the classics, fueled by your chao</p>
+      <p><strong><Link to="/Signup">register</Link> to access our full library of developer-grade templates.</strong></p>
+      </div>
       {memes.map(meme => (
         <div key={meme.id}>
           <img src={meme.url} alt="Meme" />
