@@ -6,6 +6,9 @@ import memes from '../assets/memes.json';
 // const apiUrl = import.meta.env.VITE_API_URL || "";
 
 function MemeGenerator() {
+
+  const [selectedMeme, setSelectedMeme] = useState(memes[0]);
+
   const [meme, setMeme] = useState({
     topText: "",
     bottomText: "",
@@ -24,14 +27,11 @@ function MemeGenerator() {
     }));
   }
 
-  const onPreviewMeme = (event) => {
-    const memeUrl = event.target.value;
-    const selectedMeme = memes.find(m => m.url === memeUrl);
-    setMeme(prevMeme => ({
-      ...prevMeme,
-      selectedUrl: memeUrl,
-      templateId: selectedMeme?.id || ""
-    }));
+  const onPreviewMeme = (selectedUrl) => {
+    setMeme({
+      ...meme,
+      selectedUrl: selectedUrl
+    });
   };
 
   const handleCreateMeme = async () => {
@@ -89,14 +89,28 @@ function MemeGenerator() {
     <section id="center">
       <h1>Meme Generator</h1>
 
-      <select id="meme-select" onChange={onPreviewMeme} value={meme.selectedUrl}>
+      <div className = "dev-meme-layout">
+      <div className = "meme-gallery">
         {memes.map((m) => (
-          <option key={m.id} value={m.url}>{m.name}</option>
+            <img 
+            key = {m.id} 
+            src={m.url} 
+            className={selectedMeme.id === m.id ? 'active-thumb' : 'thumb'}
+            onClick={() => setSelectedMeme(m)}
+            alt={m.name} />
         ))}
-      </select>
+      </div>
 
+      {/* <select id="meme-select" onChange={onPreviewMeme} value={meme.selectedUrl}>
+        {memes.map((m) => (
+          //<option key={m.id} value={m.url}>{m.name}</option>
+          <img src={m.id} alt="Meme Preview" />
+        ))}
+
+      </select> */}
+      <div className = "meme-main-content">
       <div id="meme-preview">
-        <img id="meme-image" src={meme.selectedUrl} alt="Meme Preview" />
+        <img id="meme-image" src={selectedMeme.url} alt="Current Meme" />
       </div>
 
       <div className='meme-form'>
@@ -115,6 +129,8 @@ function MemeGenerator() {
           onChange={handleChange}
         />
         <button onClick={handleCreateMeme}>Create Meme</button>
+      </div>
+      </div>
       </div>
     </section>
   );
