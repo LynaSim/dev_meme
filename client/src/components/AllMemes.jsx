@@ -15,7 +15,7 @@ function AllMemes() {
       {memes.map(meme => (
         <div key={meme.id}>
           <img src={meme.url} alt="Meme" />
-          <p><strong>By:</strong> {meme.User?.username || 'Anonymous'}</p>
+          <p><strong>By:</strong> {meme.user.username || 'Anonymous'}</p>
           <p>"{meme.text0} {meme.text1}"</p>
         </div>
       ))}

@@ -63,7 +63,7 @@ router.get('/my-memes', authMiddleware, async (req, res) => {
     }
 });
 
-// GET /api/memes (Public Feed)
+// GET all memes /api/memes
 router.get('/', async (req, res) => {
   try {
     const allMemes = await Meme.findAll({
