@@ -40,4 +40,27 @@ router.post('/', authMiddleware, async (req, res) => {
     }
 });
 
+// routes/meme.js
+// GET request to http://localhost:3001/api/memes/my-memes
+// GET all memes for the logged-in user
+router.get('/my-memes', authMiddleware, async (req, res) => {
+    try {
+        const myMemes = await Meme.findAll({ 
+            where: {postedBy: req.user.id},
+            order: [['createdOn', 'DESC']],
+            include: [
+                {
+                    model: User,
+                    attributes: ["username"]
+                }
+            ] 
+        });
+        
+        res.json(myMemes);
+    } catch (err) {
+        console.error(err);
+        res.status(500).json({ error: "Failed to retrieve user's memes" });
+    }
+});
+
 module.exports = router;
