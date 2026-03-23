@@ -5,7 +5,7 @@ import Login from './components/Login';
 import Signup from './components/Signup';
 import MemeGenerator from './components/MemeGenerator';
 import Profile from './components/Profile';
-
+import AllMemes from './components/AllMemes';
 
 import { SessionProvider } from './contexts/SessionContext';
 
@@ -20,7 +20,7 @@ const App = () => {
         <Route path="/memes" element={<MemeGenerator />} />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
-        <Route path="*" element={<h1>Not Found or Welcome</h1>} />
+        <Route path="*" element={<AllMemes />} />
       </Routes>
       </SessionProvider>
     </div>

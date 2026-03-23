@@ -63,4 +63,17 @@ router.get('/my-memes', authMiddleware, async (req, res) => {
     }
 });
 
+// GET /api/memes (Public Feed)
+router.get('/', async (req, res) => {
+  try {
+    const allMemes = await Meme.findAll({
+      order: [['createdOn', 'DESC']],
+      include: [{ model: User, attributes: ['username'] }]
+    });
+    res.json(allMemes);
+  } catch (err) {
+    res.status(500).json({ error: 'Failed to fetch all memes' });
+  }
+});
+
 module.exports = router;
