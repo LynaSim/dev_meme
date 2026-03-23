@@ -26,7 +26,7 @@ const authMiddleware = (req, res, next) => {
     res.status(400).json({ message: 'Invalid token: ' + err.message });
   }
 
-  return req;
+  // return req;
 }
 
 const signToken = (user) => {
@@ -34,8 +34,9 @@ const signToken = (user) => {
   const payload = {
     id: user.id,
     email: user.email,
-    first_name: user.first_name,
-    last_name: user.last_name,
+    username: user.username
+    // first_name: user.first_name,
+    // last_name: user.last_name,
   };
   return jwt.sign({ data: payload }, secret, { expiresIn: expiration });
 }

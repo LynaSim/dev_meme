@@ -1,7 +1,9 @@
 import '../style.css';
 import { useState } from 'react';
 import axios from 'axios';
+import api from '../api';
 import memes from '../assets/memes.json';
+// const apiUrl = import.meta.env.VITE_API_URL || "";
 
 function MemeGenerator() {
   const [meme, setMeme] = useState({
@@ -33,22 +35,46 @@ function MemeGenerator() {
   };
 
   const handleCreateMeme = async () => {
-    try {
-      const response = await fetch("http://localhost:3001/api/memes", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          template_id: meme.templateId,
-          text0: meme.topText,
-          text1: meme.bottomText
-        })
+    // Grab token
+    const token = localStorage.getItem('authToken');
+
+    if (!token) {
+      alert("No token found. Please log in again.");
+      return;
+    }
+      // Changed this because we are using axios and not fetch()
+      // try { const response = await fetch("http://localhost:3001/api/memes", {
+
+      //   method: "POST",
+      //   headers: {
+      //     "Content-Type": "application/json",
+      //     "Authorization": `Bearer ${token}`
+      //   },
+      //   body: JSON.stringify({
+      //     template_id: meme.templateId,
+      //     text0: meme.topText,
+      //     text1: meme.bottomText
+      //   })
+      // });
+
+    try {  
+      // Changed this because we are using axios and not fetch()
+      // Note re:deployment - if universal url required: const response = await fetch(`${apiUrl}/api/memes`
+
+      const response = await api.post("/api/memes", {
+        template_id: meme.templateId,
+        text0: meme.topText,
+        text1: meme.bottomText
       });
-      const result = await response.json();
+
+      // const result = await response.json();
+      const result = response.data;
+      console.log("Success!", result);
 
       if (result.success) {
         setMeme(prevMeme => ({
           ...prevMeme,
-          selectedUrl: result.data.url 
+          selectedUrl: result.data.url
         }));
       } else {
         alert("Error: " + result.error_message);
@@ -57,6 +83,7 @@ function MemeGenerator() {
       console.error("Frontend Fetch Error:", err);
     }
   };
+
 
   return (
     <section id="center">
@@ -73,19 +100,19 @@ function MemeGenerator() {
       </div>
 
       <div className='form'>
-        <input 
-          type="text" 
-          placeholder='Top text' 
-          name='topText' 
-          value={meme.topText} 
-          onChange={handleChange} 
+        <input
+          type="text"
+          placeholder='Top text'
+          name='topText'
+          value={meme.topText}
+          onChange={handleChange}
         />
-        <input 
-          type="text" 
-          placeholder='Bottom text' 
-          name='bottomText' 
-          value={meme.bottomText} 
-          onChange={handleChange} 
+        <input
+          type="text"
+          placeholder='Bottom text'
+          name='bottomText'
+          value={meme.bottomText}
+          onChange={handleChange}
         />
         <button onClick={handleCreateMeme}>Create Meme</button>
       </div>
