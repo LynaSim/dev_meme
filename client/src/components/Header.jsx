@@ -28,7 +28,7 @@ const Header = () => {
         <Link to="/">All Memes</Link>
         {token ? (
           <>
-            <Link to="/profile">{wordCase(user.username)}'s Memes</Link>
+            <Link to="/profile">Your Memes</Link>
             <Link to="/memes">Meme Generator</Link>
             <button onClick={handleLogout}>Logout</button>
           </>
