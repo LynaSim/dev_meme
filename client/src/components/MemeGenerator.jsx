@@ -86,58 +86,67 @@ function MemeGenerator() {
 
 
   return (
-    <section id="center">
-      <h1>Meme Generator</h1>
+    <section id="center" className='container-fluid bg-dark text-light min-vh-100 p-0'>
 
-      <div className = "dev-meme-layout">
-      <div className = "meme-gallery">
-        {memes.map((m) => (
-            <img 
-            key = {m.id} 
-            src={m.url} 
-            className={selectedMeme.id === m.id ? 'active-thumb' : 'thumb'}
-            onClick={() => { setSelectedMeme(m);
-              setMeme(prev => ({ 
-            ...prev, 
-            templateId: m.id,
-            selectedUrl: m.url
-            }));
-            }}
-            alt={m.name} />
-        ))}
-      </div>
+      <header className="py-3 border-bottom border-secondary text-center">
+      <h1 className="h3">Generate Your Meme Here!</h1>
+      </header>
 
-      {/* <select id="meme-select" onChange={onPreviewMeme} value={meme.selectedUrl}>
-        {memes.map((m) => (
-          //<option key={m.id} value={m.url}>{m.name}</option>
-          <img src={m.id} alt="Meme Preview" />
-        ))}
+      <div className="row g-0">
+        <aside className="col-lg-3 col-md-4 vh-100 overflow-auto border-end border-secondary p-3 bg-dark">
+          <h6 className="text-uppercase text-muted small mb-3">Choose a Meme Template</h6>
+        <div className = "meme-gallery">
+          {memes.map((m) => (
+              <img 
+              key = {m.id} 
+              src={m.url} 
+              className={`img-fluid rounded cursor-pointer ${selectedMeme.id === m.id ? 'border border-primary border-4' : 'opacity-75'}`}
+              onClick={() => { setSelectedMeme(m);
+                setMeme(prev => ({ 
+              ...prev, 
+              templateId: m.id,
+              selectedUrl: m.url
+              }));
+              }}
+              alt={m.name} />
+          ))}
+        </div>
+        </aside>
 
-      </select> */}
-      <div className = "meme-main-content">
-      <div id="meme-preview">
-        <img id="meme-image" src={meme.selectedUrl || selectedMeme.url} alt="Current Meme" />
-      </div>
+        <main className="col-lg-9 col-md-8 d-flex flex-column align-items-center justify-content-center p-4"></main>
+        
+        <div className="preview-meme bg-black rounded shadow-lg d-flex align-items center justify-content-center mb-4">
+        
+        <img id="meme-image" src={meme.selectedUrl || selectedMeme.url} className="mh-100 mw-100 shadow" alt="Current Meme" />
 
-      <div className='meme-form'>
-        <input
-          type="text"
-          placeholder='Top text'
-          name='topText'
-          value={meme.topText}
-          onChange={handleChange}
-        />
-        <input
-          type="text"
-          placeholder='Bottom text'
-          name='bottomText'
-          value={meme.bottomText}
-          onChange={handleChange}
-        />
-        <button onClick={handleCreateMeme}>Create Meme</button>
+        </div>
+
+        <div className='w-100 meme-form'>
+          <div className="mb-3">
+            <input
+              type="text"
+              className="form-control form-control-lg bg-secondary text-white border-0"
+              placeholder='Top text'
+              name='topText'
+              value={meme.topText}
+              onChange={handleChange}
+            />
+          <div className="mb-3">
+            <input
+              type="text"
+              className="form-control form-control-lg bg-secondary text-white border-0"
+              placeholder='Bottom text'
+              name='bottomText'
+              value={meme.bottomText}
+              onChange={handleChange}
+            />
+          </div>
+          <button className="btn btn-primary btn-lg w-100 fw-bold" onClick={handleCreateMeme}>Create Meme</button>
+          </div>
+        </div>
       </div>
-      </div>
-      </div>
+      
+  
     </section>
   );
 }
