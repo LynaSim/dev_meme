@@ -8,6 +8,8 @@ const Header = () => {
   const token = localStorage.getItem('authToken');
 
   const { user } = useSession();
+  // const username = localStorage.getItem('username');
+
 
   const handleLogout = () => {
     localStorage.removeItem('authToken');
