@@ -125,7 +125,7 @@ function MemeGenerator() {
             <div className="mb-3">
               <input
                 type="text"
-                className="form-control form-control-lg bg-secondary text-white border-0"
+                className="form-control form-control-lg text-white border-0"
                 placeholder='Top text'
                 name='topText'
                 value={meme.topText}
@@ -136,14 +136,14 @@ function MemeGenerator() {
             <div className="mb-3">
               <input
                 type="text"
-                className="form-control form-control-lg bg-secondary text-white border-0"
+                className="form-control form-control-lg text-white border-0"
                 placeholder='Bottom text'
                 name='bottomText'
                 value={meme.bottomText}
                 onChange={handleChange}
               />
             </div>
-          <button className="btn btn-primary btn-lg w-100 fw-bold" onClick={handleCreateMeme}>Create Meme</button>
+          <button className="generate btn btn-lg w-100 fw-bold" onClick={handleCreateMeme}>Create Meme</button>
         </div>
       </div>
     </div>
