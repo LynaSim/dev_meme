@@ -48,7 +48,7 @@ const Header = () => {
             ) : (
               <>
                 <Link className="nav-link text-light mx-3" to="/login">Login</Link>
-                <Link className="nav-link text-light mx-3" to="/signup">Signup</Link>
+                <Link className="nav-link text-light mx-3" to="/signup">Sign Up</Link>
               </>
 
             )}

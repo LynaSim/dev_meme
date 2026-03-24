@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import api from '../api';
 import { useNavigate } from 'react-router-dom';
 import { useSession } from '../contexts/SessionContext';
+import '../style.css';
 
 const Signup = () => {
   const [email, setEmail] = useState('example@devmeme.com');
@@ -84,7 +85,7 @@ const Signup = () => {
         required
       />
       {error && <p>{error}</p>}
-      <button type="submit">Signup</button>
+      <button type="submit">Sign Up</button>
     </form>
   );
 };
