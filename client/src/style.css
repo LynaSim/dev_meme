@@ -4,35 +4,43 @@
 
 .preview-meme{
     width: 100%;
-    max-width: 600px;
-    height: 500px
+    max-width: 800px;
+    height: auto;
+    overflow: hidden;
+    margin-bottom: 2rem;
+    display: flex;
+    justify-content: center;
+}
+
+#meme-image{
+    display: block;
+    width: 80%;
+    height: auto;
+    object-fit: contain;
+    max-height: 55vw;
 }
 
 .main-header{
     background-size: cover;
-    background-repeat: 'no-repeat';
+    background-position: top right;
+    background-repeat: no-repeat;
+    height: 40vh;
     min-height: 200px;
+    max-height: 400px;
     width: 100%;
 }
 
-@media (max-width: 992px) {
+@media (max-width: 792px) {
   .main-header {
-    min-height: 200px;
-    background-repeat: 'no-repeat';
+    height: 20vh;
+    min-height: 100px;
+    max-height: 200px;
+    background-repeat: no-repeat;
     background-position: 80% top;
   }
 }
 
-@media (max-width: 576px) {
-  .main-header {
-    min-height: 160px;
-    background-repeat: 'no-repeat';
-    background-position: center top;
-    padding: 10px;
-  }
-}
-
-.nav-link{
+.nav-link, button{
     background-color: #2081b5 !important;
     font-weight: 600 !important;
 }
