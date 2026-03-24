@@ -11,7 +11,7 @@ import { SessionProvider } from './contexts/SessionContext';
 
 const App = () => {
   return (
-    <div>
+    <div className="bg-dark">
       <SessionProvider>
       <Header />
       <Routes>
