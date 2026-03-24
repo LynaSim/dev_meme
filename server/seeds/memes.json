@@ -1,0 +1,107 @@
+[
+  {
+    "template_id": "181913649",
+    "url": "https://i.imgflip.com/grr.jpg",
+    "text0": "Writing unit tests",
+    "text1": "Testing in production",
+    "postedBy": 1
+  },
+  {
+    "template_id": "112126428",
+    "url": "https://i.imgflip.com/1ii4oc.jpg",
+    "text0": "New framework",
+    "text1": "Finishing current project",
+    "postedBy": 2
+  },
+  {
+    "template_id": "87743002",
+    "url": "https://i.imgflip.com/1g8my4.jpg",
+    "text0": "Fix the bug",
+    "text1": "Rewrite the whole codebase",
+    "postedBy": 3
+  },
+  {
+    "template_id": "438680",
+    "url": "https://i.imgflip.com/9ehk.jpg",
+    "text0": "It works on my machine!",
+    "text1": "Fix it anyway!",
+    "postedBy": 4
+  },
+  {
+    "template_id": "101470",
+    "url": "https://i.imgflip.com/26am.jpg",
+    "text0": "Why is this working?",
+    "text1": "Legacy Code",
+    "postedBy": 5
+  },
+  {
+    "template_id": "124822590",
+    "url": "https://i.imgflip.com/2ji8hx.jpg",
+    "text0": "Console.log() printed undefined",
+    "text1": "You forgot to return the variable",
+    "postedBy": 1
+  },
+  {
+    "template_id": "61579",
+    "url": "https://i.imgflip.com/1bhw.jpg",
+    "text0": "One does not simply",
+    "text1": "Deploy on a Friday",
+    "postedBy": 2
+  },
+  {
+    "template_id": "102156234",
+    "url": "https://i.imgflip.com/1o00in.jpg",
+    "text0": "When you find the missing semicolon",
+    "text1": "And 100 other errors disappear",
+    "postedBy": 3
+  },
+  {
+    "template_id": "91538330",
+    "url": "https://i.imgflip.com/1ih962.jpg",
+    "text0": "When the junior developer",
+    "text1": "Pushes straight to main branch",
+    "postedBy": 4
+  },
+  {
+    "template_id": "549639",
+    "url": "https://i.imgflip.com/6l39r2.png",
+    "text0": "Reading my own code",
+    "text1": "Written two weeks ago",
+    "postedBy": 5
+  },
+  {
+    "template_id": "217743065",
+    "url": "https://i.imgflip.com/3lmzyx.jpg",
+    "text0": "Me saying 'I understand'",
+    "text1": "To the Senior Developer's explanation",
+    "postedBy": 11
+  },
+  {
+    "template_id": "131940431",
+    "url": "https://i.imgflip.com/31n0zu.png",
+    "text0": "Solving a problem without Google",
+    "text1": "Is this superpowers?",
+    "postedBy": 12
+  },
+  {
+    "template_id": "222403160",
+    "url": "https://imgflip.com/s/meme/Waiting-Skeleton.jpg",
+    "text0": "Deleting 100 lines of unused code",
+    "text1": "Satisfied face",
+    "postedBy": 13
+  },
+  {
+    "template_id": "10077763",
+    "url": "https://i.imgflip.com/h1bdd.jpg",
+    "text0": "Documentation?",
+    "text1": "Read the code!",
+    "postedBy": 14
+  },
+  {
+    "template_id": "135256802",
+    "url": "https://i.imgflip.com/1c81c1.jpg",
+    "text0": "Me looking at my app",
+    "text1": "Successfully compiled without errors",
+    "postedBy": 15
+  }
+]

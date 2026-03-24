@@ -1,0 +1,77 @@
+[
+  {
+    "username": "BinaryBard",
+    "email": "bard@dev.com",
+    "password": "password123"
+  },
+  {
+    "username": "GitCommitDie",
+    "email": "git@dev.com",
+    "password": "password123"
+  },
+  {
+    "username": "SyntaxError",
+    "email": "error@dev.com",
+    "password": "password123"
+  },
+  {
+    "username": "CaffeinatedCoder",
+    "email": "coffee@dev.com",
+    "password": "password123"
+  },
+  {
+    "username": "NullPointerNate",
+    "email": "nate@dev.com",
+    "password": "password123"
+  },
+  {
+    "username": "CtrlZ_Hero",
+    "email": "undo@dev.com",
+    "password": "password123"
+  },
+  {
+    "username": "StackOverload",
+    "email": "stack@dev.com",
+    "password": "password123"
+  },
+  {
+    "username": "ConsoleLogLauren",
+    "email": "lauren@dev.com",
+    "password": "password123"
+  },
+  {
+    "username": "BugHunter404",
+    "email": "hunter@dev.com",
+    "password": "password123"
+  },
+  {
+    "username": "DockerDan",
+    "email": "dan@dev.com",
+    "password": "password123"
+  },
+  {
+    "username": "QueryQueen",
+    "email": "queen@dev.com",
+    "password": "password123"
+  },
+  {
+    "username": "MergeConflictMike",
+    "email": "mike@dev.com",
+    "password": "password123"
+  },
+  {
+    "username": "LegacyLeo",
+    "email": "leo@dev.com",
+    "password": "password123"
+  },
+  {
+    "username": "AsyncAlice",
+    "email": "alice@dev.com",
+    "password": "password123"
+  },
+  {
+    "username": "DeployDayDave",
+    "email": "dave@dev.com",
+    "password": "password123"
+  }
+]

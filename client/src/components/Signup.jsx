@@ -55,7 +55,7 @@ const Signup = () => {
 
   return (
     <form onSubmit={handleSubmit}>
-      <h2>Sign Up</h2>
+      <h2>Register</h2>
       <input
         type="text"
         placeholder="Username"
