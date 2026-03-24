@@ -16,7 +16,7 @@ function AllMemes() {
     <div>
       <div class="welcome">
       <p>Why wait for the perfect meme to find you? Turn those inside jokes into internet gold in seconds. Powered by the classics, fueled by your chao</p>
-      <p><strong><Link to="/Signup">register</Link> to access our full library of developer-grade templates.</strong></p>
+      <p><strong><Link to="/Signup">Register</Link> to access our full library of developer-grade templates.</strong></p>
       </div>
       {memes.map(meme => (
         <div key={meme.id}>
