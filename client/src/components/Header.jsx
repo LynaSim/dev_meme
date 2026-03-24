@@ -1,7 +1,8 @@
 import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import logo from '../assets/logo.png';
+import logo from '../assets/logo-background.jpg';
 import { useSession } from '../contexts/SessionContext';
+import '../style.css';
 
 const Header = () => {
   const navigate = useNavigate();
@@ -23,24 +24,35 @@ const Header = () => {
   }
 
   return (
-    <header>
-      <nav>
-        <Link to="/">All Memes</Link>
-        {token ? (
-          <>
-            <Link to="/profile">{wordCase(user.username)}'s Memes</Link>
-            <Link to="/memes">Meme Generator</Link>
-            <button onClick={handleLogout}>Logout</button>
-          </>
-        ) : (
-          <>
-            <Link to="/login">Login</Link>
-            <Link to="/signup">Signup</Link>
-          </>
+    <header className = "main-header shadow d-flex align-items-end" style={{ backgroundImage: `url(${logo})`}}>
+      <nav class = "navbar navbar-expand-lg navbar-dark bg-dark flex-fill">
+        <div className = "container-fluid">
+          <ul className = "nav nav-pills">
+            <li className = "nav-item">
+            <Link className="nav-link text-light mx-3" to="/">All Memes</Link>
+            </li>
+            {token ? (
+              <>
+              <li className = "nav-item">
+                <Link className="nav-link text-light mx-3" to="/profile">{wordCase(user.username)}'s Memes</Link>
+              </li>
+              <li className = "nav-item">
+                <Link className="nav-link text-light mx-3" to="/memes">Meme Generator</Link>
+              </li>
+              <li className = "nav-item">
+                <button className = "nav-link text-light mx-3" onClick={handleLogout}>Logout</button>
+              </li>
+              </>
+            ) : (
+              <>
+                <Link className="nav-link text-light mx-3" to="/login">Login</Link>
+                <Link className="nav-link text-light mx-3" to="/signup">Signup</Link>
+              </>
 
-        )}
+            )}
+            </ul>
+          </div>
       </nav>
-      <img src={logo} alt="Logo" width='300'/>
     </header>
   );
 };
