@@ -1,4 +1,4 @@
-import { useEffect, useState} from 'react';
+import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import api from '../api';
 
@@ -13,18 +13,25 @@ function AllMemes() {
   }, []);
 
   return (
-    <div className="container my-5 bg-dark">
-      <div className="bg-light p-5 rounded-3 mb-5 shadow-sm text-center">
-      <p className="fs-5 fw-bolder">Why wait for the perfect meme to find you? Turn those inside jokes into internet gold in seconds. Powered by the classics, fueled by your chaos.</p>
-      <p><strong><Link to="/Signup" className="btn btn-primary btn-lg shadow-sm">Register</Link> to access our full library of developer-grade templates.</strong></p>
-      </div>
-      {memes.map(meme => (
-        <div key={meme.id}>
-          <img src={meme.url} alt="Meme" />
-          <p><strong>By:</strong> {meme.user.username || 'Anonymous'}</p>
-          <p>"{meme.text0} {meme.text1}"</p>
-        </div>
+    <div className="container my-5 px-5 text-white">
+    <div className="row g-5">
+    {memes.map(meme => (
+
+          <div key={meme.id} className="card col-12 col-md-6 col-lg-4 bg-dark">
+            <img src={meme.url} className="card-img-top img-fluid" alt="Meme"/>
+              <div className="card-body">
+                <p className="card-text text-info"> by: <span className="badge text-bg-warning">{meme.user.username || 'Anonymous'}</span><br/>on <span className="date">{new Date(meme.createdOn).toLocaleDateString()}</span></p>
+              </div>
+          </div>
+
+          // <div key={meme.id}>
+          //   <img src={meme.url} alt="Meme" className="img-fluid" />
+          //   <p><strong>By:</strong> {meme.user.username || 'Anonymous'}</p>
+          //   <p>"{meme.text0} {meme.text1}"</p>
+          // </div>
+
       ))}
+    </div>
     </div>
   );
 }

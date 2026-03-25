@@ -93,7 +93,7 @@ function MemeGenerator() {
       </header>
 
       <div className="row g-0">
-        <aside className="col-lg-2 col-md-3 vh-100 overflow-auto border-end border-secondary p-3 bg-dark">
+        <aside className="order-2 order-md-1 col-lg-2 col-md-3 vh-100 overflow-auto border-end border-secondary p-3 bg-dark">
           <h6 className="text-uppercase h5 mb-3">Choose a Meme Template</h6>
           <div className = "meme-gallery">
             {memes.map((m) => (
@@ -113,7 +113,7 @@ function MemeGenerator() {
           </div>
         </aside>
 
-        <div className="col-lg-8 col-md-7 d-flex flex-column align-items-center justify-content-center p-4">
+        <div className="order-1 order-md-2 col-lg-8 col-md-7 d-flex flex-column align-items-center justify-content-center p-4">
           <div className="preview-meme bg-dark">
         
             <img id="meme-image" src={meme.selectedUrl || selectedMeme.url} className="mh-100 mw-100" alt="Current Meme" />

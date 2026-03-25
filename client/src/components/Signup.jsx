@@ -47,7 +47,7 @@ const Signup = () => {
         id: data.user.id,
       });
 
-      navigate('/');
+      navigate('/login');
     } catch (error) {
       console.error('Signup failed', error);
     }
