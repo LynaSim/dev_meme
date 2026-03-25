@@ -1,6 +1,40 @@
 *{
     background-color: #212529;
+    font-family: 'JetBrains Mono', monospace;
 }
+
+.welcome {
+  font-family: 'JetBrains Mono', monospace;
+  font-weight: 800;
+}
+
+.anton-regular {
+  font-family: "Anton", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.jetbrains-mono {
+  font-family: "JetBrains Mono", monospace;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.date {
+    font-size: 0.9em;
+    font-family: 'JetBrains Mono', monospace;
+}
+/* // Info from Google Fonts website:
+<weight>: Use a value from 100 to 800
+<uniquifier>: Use a unique and descriptive class name */
+/* 
+.jetbrains-mono-<uniquifier> {
+  font-family: "JetBrains Mono", monospace;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+} */
 
 .meme-form{
     max-width: 500px
@@ -47,6 +81,10 @@
 .nav-link{
     background-color: #2081b5 !important;
     font-weight: 600 !important;
+}
+
+.nav-link:hover {
+    background-color: #0DCAF0 !important;
 }
 
 .generate{

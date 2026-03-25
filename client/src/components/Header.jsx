@@ -7,13 +7,16 @@ import '../style.css';
 const Header = () => {
   const navigate = useNavigate();
   const token = localStorage.getItem('authToken');
-
+  const username = localStorage.getItem('username');
+  
   const { user } = useSession();
   // const username = localStorage.getItem('username');
 
 
   const handleLogout = () => {
     localStorage.removeItem('authToken');
+    localStorage.removeItem('username');
+
     navigate('/login');
   };
 
@@ -28,15 +31,15 @@ const Header = () => {
   return (
     <header className = "main-header shadow d-flex align-items-end" style={{ backgroundImage: `url(${logo})`}}>
       <nav class = "navbar navbar-expand-lg navbar-dark bg-dark flex-fill">
-        <div className = "container-fluid">
-          <ul className = "nav nav-pills">
+        <div className = "container-fluid d-flex justify-content-center">
+          <ul className = "nav nav-pills d-flex justify-content-center">
             <li className = "nav-item">
-            <Link className="nav-link text-light mx-3" to="/">All Memes</Link>
+            <Link className="nav-link text-light mx-3" to="/all-memes">All Memes</Link>
             </li>
             {token ? (
               <>
               <li className = "nav-item">
-                <Link className="nav-link text-light mx-3" to="/profile">{wordCase(user.username)}'s Memes</Link>
+                <Link className="nav-link text-light mx-3" to="/profile">{wordCase(username)}'s Memes</Link>
               </li>
               <li className = "nav-item">
                 <Link className="nav-link text-light mx-3" to="/memes">Meme Generator</Link>
@@ -48,7 +51,7 @@ const Header = () => {
             ) : (
               <>
                 <Link className="nav-link text-light mx-3" to="/login">Login</Link>
-                <Link className="nav-link text-light mx-3" to="/signup">Sign Up</Link>
+                <Link className="nav-link text-light mx-3" to="/signup">Register</Link>
               </>
 
             )}
