@@ -8,6 +8,11 @@ if (process.env.MYSQL_URL) {
   sequelize = new Sequelize(process.env.MYSQL_URL, {
     dialect: 'mysql',
     logging: false, // Keep logs clean
+    dialectOptions: {
+      ssl: {
+        rejectUnauthorized: false // 🔐 This forces a secure connection without throwing warnings!
+      }
+    }
   });
 } else {
   // Fallback to your Local Computer (Development)
