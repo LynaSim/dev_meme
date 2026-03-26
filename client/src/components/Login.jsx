@@ -34,6 +34,7 @@ const Login = () => {
       localStorage.setItem('authToken', data.token);
       localStorage.setItem('userId', data.user.id);
       localStorage.setItem('username', data.user.username);
+      alert('Login successful🎉');
       navigate('/all-memes');
     } catch (error) {
       console.error('Login failed', error);
