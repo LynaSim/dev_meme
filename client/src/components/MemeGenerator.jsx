@@ -76,6 +76,8 @@ function MemeGenerator() {
           ...prevMeme,
           selectedUrl: result.data.url
         }));
+      alert('Success! Meme Created🎉');
+
       } else {
         alert("Error: " + result.error_message);
       }

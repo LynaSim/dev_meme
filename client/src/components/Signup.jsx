@@ -5,10 +5,10 @@ import { useSession } from '../contexts/SessionContext';
 import '../style.css';
 
 const Signup = () => {
-  const [email, setEmail] = useState('example@devmeme.com');
-  const [userName, setUserName] = useState('user');
-  const [password, setPassword] = useState('Letmein123!');
-  const [password2, setPassword2] = useState('Letmein123!');
+  const [email, setEmail] = useState('');
+  const [userName, setUserName] = useState('');
+  const [password, setPassword] = useState('');
+  const [password2, setPassword2] = useState('');
 
   const { setUser } = useSession();
   const [error, setError] = useState('');
@@ -17,17 +17,17 @@ const Signup = () => {
   const displayError = (message) => {
     setError(message);
     setTimeout(() => {
-        setError('');
+      setError('');
     }, 3000);
-};
+  };
 
   const validatePassword = () => {
     if (password !== password2) {
-        displayError('Passwords do not match');
-        return false;
+      displayError('Passwords do not match');
+      return false;
     }
     return true;
-    };
+  };
 
 
   const handleSubmit = async (e) => {
@@ -35,7 +35,7 @@ const Signup = () => {
 
     // run any validation checks
     if (!validatePassword()) {
-        return;
+      return;
     }
 
     try {
@@ -47,6 +47,7 @@ const Signup = () => {
         id: data.user.id,
       });
 
+      alert('Account created🎉');
       navigate('/login');
     } catch (error) {
       console.error('Signup failed', error);
