@@ -17,6 +17,9 @@ app.use(cors());
 
 const PORT = process.env.PORT || 3001;
 
+// Add routes
+app.use('/api', routes);
+
 // has the --rebuild parameter been passed as a command line param?
 const rebuild = process.argv[2] === "--rebuild";
 
@@ -42,9 +45,6 @@ if (process.env.NODE_ENV === 'production') {
 // app.get("/", (req, res) => {
 //   res.sendFile(path.join(__dirname, "public", "index.html"));
 // }); 
-
-// Add routes
-app.use('/api', routes);
 
 // Sync database
 sequelize.sync({ force: rebuild }).then(() => {
