@@ -5,7 +5,7 @@ import { useSession } from '../contexts/SessionContext';
 import '../style.css';
 
 const Signup = () => {
-  const [email, setEmail] = useState('example@devmeme.com');
+  const [email, setEmail] = useState('example@email.com');
   const [userName, setUserName] = useState('user');
   const [password, setPassword] = useState('Letmein123!');
   const [password2, setPassword2] = useState('Letmein123!');

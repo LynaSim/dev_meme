@@ -2,8 +2,10 @@ import axios from 'axios';
 
 import mockAxios from './mock/api';
 
+// Leave baseURL out or set to '/' so it uses the Render domain in production
+// baseURL: process.env.NODE_ENV === 'production' ? '/' : 'http://localhost:3001',
 const apiAxios = axios.create({
-  baseURL: 'http://localhost:3001',
+  baseURL: '/', 
 });
 
 apiAxios.interceptors.request.use((config) => {
