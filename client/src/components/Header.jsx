@@ -20,7 +20,6 @@ const Header = () => {
     navigate('/login');
   };
 
-
   const wordCase = (word) => {  
     if (word === undefined) {
       return '';
@@ -30,7 +29,7 @@ const Header = () => {
 
   return (
     <header className = "main-header shadow d-flex align-items-end" style={{ backgroundImage: `url(${logo})`}}>
-      <nav class = "navbar navbar-expand-lg navbar-dark bg-dark flex-fill">
+      <nav className = "navbar navbar-expand-lg navbar-dark bg-dark flex-fill">
         <div className = "container-fluid d-flex justify-content-center">
           <ul className = "nav nav-pills d-flex justify-content-center">
             <li className = "nav-item">

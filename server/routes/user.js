@@ -13,24 +13,6 @@ router.get("/me", authMiddleware, async (req, res) => {
   }
 });
 
-// router.post("/enroll", authMiddleware, async (req, res) => {
-//   try {
-//     const { courseId } = req.body;
-//     const user = await User.getOne(req.user.id);
-//     if (!user) return res.status(401).json({ message: "Token expired" });
-
-//     await EnrolledUser.create({
-//       userId: req.user.id,
-//       courseId,
-//       enrollment_date: new Date(),
-//     });
-
-//     res.status(200).json({ message: "Course enrolled" });
-//   } catch (err) {
-//     res.status(500).json(err);
-//   }
-// });
-
 // GET the User record
 router.get("/:id", async (req, res) => {
   console.log("looking for user", req.params.id);
