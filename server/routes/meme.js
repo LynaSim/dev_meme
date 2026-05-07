@@ -76,4 +76,20 @@ router.get('/', async (req, res) => {
   }
 });
 
+router.delete('/:id', async (req, res) => {
+  try {
+    const deletedMeme = await Meme.destroy({
+      where: {
+        id: req.params.id,
+        // postedBy: req.session.userId
+      }
+    });
+
+    if (!deletedMeme) return res.status(404).json({ message: 'Meme not found or unauthorized' });
+    res.status(200).json({ message: 'Deleted!' });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
 module.exports = router;
